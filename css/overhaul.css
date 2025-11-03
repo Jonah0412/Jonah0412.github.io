@@ -1,0 +1,413 @@
+/* Minimalist overhaul inspired by modern product studios (scoped with .overhaul) */
+
+:root {
+    --pm-bg: #0b0b0b;
+    --pm-surface: #121212;
+    --pm-text: #f5f5f5;
+    --pm-muted: #b3b3b3;
+    --pm-border: #242424;
+    --pm-accent: #ffffff;
+}
+
+.overhaul {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--pm-bg) !important;
+    color: var(--pm-text) !important;
+    letter-spacing: 0.01em;
+}
+
+/* Header */
+.overhaul header {
+    background: rgba(11, 11, 11, 0.8) !important;
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--pm-border);
+    padding: 1.4rem 3rem !important;
+}
+
+.overhaul nav ul li a {
+    color: var(--pm-text) !important;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.overhaul nav ul li a::after {
+    height: 2px;
+    background: var(--pm-accent) !important;
+}
+
+/* Hero */
+.overhaul .hero {
+    min-height: 100vh;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 12rem 3rem 8rem 3rem !important;
+}
+
+.overhaul .hero-bg,
+.overhaul .animated-gradient,
+.overhaul .particle-network,
+.overhaul .glow-orbs {
+    display: none !important;
+}
+
+.overhaul .hero-content {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6rem;
+    padding: 0 3rem !important;
+}
+
+.overhaul .title-container {
+    position: relative;
+    min-height: 600px; /* Much larger on desktop */
+    padding: 6rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.overhaul .hero-title {
+    font-size: clamp(3.6rem, 7vw, 9.6rem) !important;
+    font-weight: 800 !important;
+    line-height: 0.95 !important;
+    text-transform: none !important;
+    letter-spacing: -0.02em !important;
+    color: #ffffff !important;
+    text-shadow: none !important;
+}
+
+.overhaul .hero-title span {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+.overhaul .hero-tagline {
+    font-size: clamp(1.6rem, 2.2vw, 2.2rem) !important;
+    color: #ffffff !important;
+    margin-top: 1.6rem !important;
+}
+
+.overhaul .hero-cta {
+    margin-top: 2.8rem !important;
+    position: relative;
+    z-index: 1;
+}
+
+.overhaul .cta-button {
+    background: #fff !important;
+    color: #000 !important;
+    border-radius: 999px !important;
+    padding: 1.4rem 2.4rem !important;
+    box-shadow: none !important;
+}
+
+.overhaul .cta-button i { color: #000 !important; }
+.overhaul .cta-button:hover { transform: translateY(-2px) !important; }
+
+/* Curved Loop Container */
+.overhaul #curved-loop-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: 2rem;
+    min-height: 120px;
+    display: block !important;
+    visibility: visible !important;
+}
+
+/* Section spacing */
+.overhaul main section { padding: 8rem 0 !important; }
+
+/* About preview */
+.overhaul .about-preview-content {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    box-shadow: none !important;
+}
+
+.overhaul .about-preview-text h3 { color: var(--pm-text) !important; }
+.overhaul .about-preview-text h4 { color: var(--pm-muted) !important; }
+
+/* Featured: convert carousel to grid */
+.overhaul .featured { padding: 8rem 0 6rem 0 !important; }
+.overhaul .featured-carousel { overflow: visible !important; }
+.overhaul .carousel-track {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem !important;
+    padding: 0 !important;
+}
+
+.overhaul .carousel-controls { display: none !important; }
+
+.overhaul .featured-item {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    box-shadow: none !important;
+}
+
+.overhaul .featured-img { height: 220px !important; }
+
+.overhaul .featured-content h3 { color: var(--pm-text) !important; }
+.overhaul .featured-content p { color: var(--pm-muted) !important; }
+
+/* CTA section */
+.overhaul .cta-container {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    box-shadow: none !important;
+}
+
+.overhaul .cta-decoration,
+.overhaul .cta-particles,
+.overhaul .cta-geometry { display: none !important; }
+
+/* Footer */
+.overhaul .creative-footer {
+    background: transparent !important;
+    border-top: 1px solid var(--pm-border) !important;
+    padding-top: 3rem !important;
+}
+
+.overhaul .footer-glowing-line,
+.overhaul .footer-particles { display: none !important; }
+
+.overhaul .social-circle {
+    background: #191919 !important;
+    border: 1px solid var(--pm-border) !important;
+}
+
+/* About page containers */
+.overhaul .profile-container,
+.overhaul .info-table-container,
+.overhaul .education-card,
+.overhaul .timeline-content,
+.overhaul .skill-card {
+    background: var(--pm-surface) !important;
+    border: 1px solid var(--pm-border) !important;
+    box-shadow: none !important;
+}
+
+/* Utilities */
+.overhaul .title-decoration { display: none !important; }
+.overhaul .section-title { letter-spacing: -0.01em; }
+
+/* Scroll Float Text Effect */
+.scroll-float {
+    overflow: hidden;
+    display: block;
+}
+
+.scroll-float-text {
+    display: inline-block;
+    font-size: clamp(1.6rem, 8vw, 10rem);
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.char {
+    display: inline-block;
+    will-change: opacity, transform;
+}
+
+/* Overhaul specific styling for scroll float */
+.overhaul .scroll-float {
+    margin: 0;
+    padding: 0;
+}
+
+.overhaul .scroll-float-text {
+    color: var(--pm-text) !important;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+}
+
+.overhaul .scroll-float-text .char {
+    color: var(--pm-text) !important;
+}
+
+.overhaul .scroll-float-text .char.highlight {
+    color: var(--pm-accent) !important;
+}
+
+.overhaul .scroll-float-text .highlight {
+    color: var(--pm-accent) !important;
+}
+
+/* Iridescence under title - Wide and Big - Extended to top */
+.overhaul .iridescence-layer,
+.overhaul .iridescence-container {
+    position: absolute;
+    top: -8rem; /* Extended way up */
+    right: -6rem; /* Extended wider */
+    bottom: -4rem; /* Extended down */
+    left: -6rem; /* Extended wider */
+    width: calc(100% + 12rem);
+    height: calc(100% + 12rem); /* Much taller */
+    z-index: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.iridescence-container {
+    width: 100%;
+    height: 100%;
+}
+
+.overhaul .iridescence-layer canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    object-fit: cover;
+}
+
+.overhaul .title-container .hero-title,
+.overhaul .title-container .hero-tagline,
+.overhaul .title-container .hero-cta {
+    position: relative;
+    z-index: 1;
+}
+
+.overhaul .title-container .hero-title {
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.overhaul .title-container .hero-tagline {
+    filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.4));
+}
+
+/* Desktop - Large screens */
+@media (min-width: 1200px) {
+    .overhaul .hero {
+        min-height: 100vh;
+        padding: 10rem 6rem 8rem 6rem !important;
+    }
+    
+    .overhaul .title-container {
+        min-height: 700px; /* Much larger */
+        padding: 8rem 0;
+    }
+    
+    .overhaul .iridescence-layer {
+        top: -12rem; /* Extended way up to fill top */
+        right: -8rem; /* Extended wider */
+        bottom: -6rem; /* Extended down */
+        left: -8rem; /* Extended wider */
+        width: calc(100% + 16rem);
+        height: calc(100% + 18rem); /* Much taller to fill space */
+    }
+    
+    .overhaul .hero-content {
+        padding: 0 6rem !important;
+    }
+    
+    .overhaul #curved-loop-container {
+        padding: 0 6rem;
+    }
+}
+
+/* Tablet */
+@media (max-width: 1199px) and (min-width: 769px) {
+    .overhaul .hero {
+        padding: 8rem 3rem 6rem 3rem !important;
+    }
+    
+    .overhaul .title-container {
+        min-height: 550px;
+        padding: 6rem 0;
+    }
+    
+    .overhaul .iridescence-layer {
+        top: -6rem; /* Extended up */
+        right: -4rem; /* Extended wider */
+        bottom: -3rem;
+        left: -4rem; /* Extended wider */
+        width: calc(100% + 8rem);
+        height: calc(100% + 9rem); /* Taller */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .overhaul .hero {
+        padding: 6rem 1.5rem 4rem 1.5rem !important;
+    }
+    
+    .overhaul .hero-content {
+        padding: 0 1.5rem !important;
+        gap: 3rem;
+    }
+    
+    .overhaul #curved-loop-container {
+        padding: 0 1.5rem;
+    }
+    
+    .overhaul .title-container {
+        min-height: 400px; /* Larger on mobile */
+        padding: 3rem 0;
+    }
+    
+    .overhaul .iridescence-layer {
+        top: -3rem; /* Extended up more */
+        right: -2rem; /* Extended wider */
+        bottom: -1.5rem;
+        left: -2rem; /* Extended wider */
+        width: calc(100% + 4rem);
+        height: calc(100% + 4.5rem); /* Taller */
+        border-radius: 8px;
+    }
+    
+    .overhaul .hero-title {
+        font-size: clamp(2.4rem, 8vw, 4.8rem) !important;
+    }
+    
+    .overhaul .hero-tagline {
+        font-size: clamp(1.4rem, 4vw, 1.8rem) !important;
+    }
+    
+    .overhaul .title-container .hero-title,
+    .overhaul .title-container .hero-tagline {
+        filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+        color: #ffffff !important;
+    }
+    
+    .overhaul .hero-title span {
+        color: #ffffff !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .overhaul .scroll-float-text {
+        font-size: clamp(1.8rem, 6vw, 3rem) !important;
+    }
+    
+    .overhaul .char {
+        font-size: inherit !important;
+    }
+    .overhaul .hero {
+        padding: 4rem 1rem 3rem 1rem !important;
+    }
+    
+    .overhaul .title-container {
+        min-height: 350px; /* Larger on small mobile */
+        padding: 2rem 0;
+    }
+    
+    .overhaul .iridescence-layer {
+        top: -2rem; /* Extended up */
+        right: -1.5rem; /* Extended wider */
+        bottom: -1rem;
+        left: -1.5rem; /* Extended wider */
+        width: calc(100% + 3rem);
+        height: calc(100% + 3rem); /* Taller */
+    }
+}
+
+

@@ -1,0 +1,329 @@
+/* Custom styles for the gallery modal */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.gallery-modal.show {
+    display: flex;
+}
+
+.gallery-modal .modal-content {
+    max-width: 80%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+}
+
+/* Gallery styles */
+.gallery {
+    background-color: #0a0a12;
+    padding: 50px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Creative grid layout */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Animation for gallery items to appear with delay */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Square gallery items */
+.gallery-item {
+    aspect-ratio: 1/1;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    background-position: center;
+    background-size: cover;
+    background-color: #1a1a2e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+    animation: fadeIn 0.6s ease-out forwards;
+    animation-fill-mode: both;
+}
+
+/* Staggered animation delay for items */
+.gallery-item:nth-child(1) { animation-delay: 0.1s; }
+.gallery-item:nth-child(2) { animation-delay: 0.2s; }
+.gallery-item:nth-child(3) { animation-delay: 0.3s; }
+.gallery-item:nth-child(4) { animation-delay: 0.4s; }
+.gallery-item:nth-child(5) { animation-delay: 0.5s; }
+.gallery-item:nth-child(6) { animation-delay: 0.6s; }
+.gallery-item:nth-child(7) { animation-delay: 0.7s; }
+.gallery-item:nth-child(8) { animation-delay: 0.8s; }
+.gallery-item:nth-child(9) { animation-delay: 0.9s; }
+.gallery-item:nth-child(10) { animation-delay: 1.0s; }
+
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+/* Background images for gallery items */
+#gallery-1 { background-image: url('../image/edit 1.jpg'); }
+#gallery-2 { background-image: url('../image/edited 2.jpg'); }
+#gallery-3 { background-image: url('../image/IMG_0728.JPG'); }
+#gallery-4 { background-image: url('../image/FINAL.jpg'); }
+#gallery-5 { background-image: url('../image/kaws.png'); }
+#gallery-6 { background-image: url('../image/Mong_Foo_Yuen_2300143_GD_Final Project_Concept_1.jpg'); }
+#gallery-7 { background-image: url('../image/ikf 1.png'); }
+#gallery-8 { background-image: url('../image/IMG_7709.jpg'); }
+#gallery-9 { background-image: url('../image/IMG_7522%20copy.jpg'); }
+#gallery-10 { background-image: url('../image/editied%20A1.png'); }
+
+/* Overlay for gallery items */
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* View button in the overlay */
+.gallery-view {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 18px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transform: scale(0.8);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.gallery-item:hover .gallery-view {
+    transform: scale(1);
+}
+
+.gallery-view:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+/* Controls for modal */
+.modal-controls {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    z-index: 1001;
+    width: 100%;
+}
+
+.modal-controls button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-controls button:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.close-modal {
+    background-color: rgba(255, 50, 50, 0.6) !important;
+    order: 2; /* Position in the middle */
+}
+
+.close-modal:hover {
+    background-color: rgba(255, 50, 50, 0.8) !important;
+}
+
+.modal-prev {
+    order: 1; /* Position on the left */
+}
+
+.modal-next {
+    order: 3; /* Position on the right */
+}
+
+/* Counter display */
+.modal-counter {
+    position: absolute;
+    bottom: 100px;
+    color: white;
+    font-size: 14px;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 5px 15px;
+    border-radius: 20px;
+}
+
+.gallery-caption {
+    margin-top: 12px;
+    text-align: center;
+}
+
+.gallery-caption h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #fff;
+}
+
+.gallery-caption p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #aaa;
+}
+
+.modal-caption, .modal-counter {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    pointer-events: none; /* So clicks pass through to the background */
+}
+
+.modal-nav button {
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    pointer-events: auto; /* Make buttons clickable */
+}
+
+.modal-nav button:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Add responsive styles for gallery */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
+        padding: 0 15px;
+    }
+    
+    .modal-controls {
+        bottom: 20px;
+    }
+    
+    .modal-controls button {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-header h1 {
+        font-size: 3rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .gallery-item {
+        animation-delay: 0.1s !important;
+    }
+    
+    .modal-controls {
+        gap: 20px;
+    }
+    
+    .modal-controls button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    .gallery-modal .modal-content {
+        max-width: 90%;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 576px) {
+    .gallery-header h1 {
+        font-size: 2.5rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 8px;
+    }
+    
+    .gallery-view {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    
+    .modal-controls {
+        gap: 15px;
+    }
+    
+    .modal-controls button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+} 

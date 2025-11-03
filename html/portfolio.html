@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gossip Duck | Portfolio</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/cta-fix.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/overhaul.css">
+    <link rel="stylesheet" href="../css/BubbleMenu.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body class="portfolio-page">
+    <div id="loading-screen">
+        <div class="loader">
+            <div class="loader-bar-container">
+                <div class="loader-bar" id="progress-bar"></div>
+            </div>
+            <div class="loader-text">QUACKING</div>
+        </div>
+    </div>
+    
+    <div class="portfolio-canvas-bg">
+        <canvas id="portfolio-canvas"></canvas>
+    </div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container futuristic-logo">
+                <img src="../image/logo.svg" alt="Gossip Duck Logo" id="logo-img" style="width: 60px; height: 60px; display: block;">
+                <span class="logo-text"></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+                    <li><a class="active" href="#PORTFOLIO">PORTFOLIO</a></li>
+                    <li><a href="gallery.html">GALLERY</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+        
+        <main>
+            <section class="portfolio-hero">
+                <div class="portfolio-hero-content">
+                    <h1 class="scroll-float">
+                        <span class="scroll-float-text">My Portfolio</span>
+                    </h1>
+                    <p class="hero-subtitle">A creative showcase of selected works</p>
+                    
+                    <div class="portfolio-stats">
+                        
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">5</span>
+                            <span class="stat-label">Categories</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Years</span>
+                            
+                        </div>
+                        <div class="stat-divider"></div>
+                    </div>
+                </div>
+                
+                <div class="scroll-indicator">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                    <div class="arrow">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="portfolio-filter-section">
+                <div class="filter-container">
+                    <h2 class="scroll-float">
+                        <span class="scroll-float-text">Explore My Work</span>
+                    </h2>
+                    <div class="portfolio-filter">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="layout">Layout Design</button>
+                        <button class="filter-btn" data-filter="photography">Photography</button>
+                        <button class="filter-btn" data-filter="brand">Brand Development</button>
+                        <button class="filter-btn" data-filter="others">Others</button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="portfolio-grid">
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/FINAL.jpg" alt="Commercial Photography">
+                            <div class="item-meta">
+                                <span class="meta-category">Photography</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Commercial Photography - Food</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Commercial%20Photography%20-%20FOOD.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="others">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/perfect%201.jpg" alt="Mobile App UI">
+                            <div class="item-meta">
+                                <span class="meta-category">Photography</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Commercial Photography - Still Life</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Commercial%20Photography%20-%20Still%20Life.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/editied A1.png" alt="Brand Identity">
+                            <div class="item-meta">
+                                <span class="meta-category">Photography</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Conceptual Photography</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Conceptual%20Photgraphy.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/Mong_Foo_Yuen_2300143_GD_Final%20Project_Concept_1.jpg" alt="Digital Art">
+                            <div class="item-meta">
+                                <span class="meta-category">Digital Art</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Digital Art & Manipulation</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Digital%20Art%20%26%20Manipulation.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="brand">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/ikf%201.png" alt="Brand Development">
+                            <div class="item-meta">
+                                <span class="meta-category">Brand Development</span>
+                                <span class="meta-date">2022</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Type Play & Copywriting</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Research%20And%20Development.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="photography">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/IMG_7709.jpg" alt="Photography Project">
+                            <div class="item-meta">
+                                <span class="meta-category">Photography</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Commercial Photography - Street Wear</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/Commercial%20Photography%20-%20Street%20Photo.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio-item" data-category="layout">
+                    <div class="portfolio-item-inner">
+                        <div class="portfolio-image">
+                            <img src="../image/kaws.png" alt="Layout Design">
+                            <div class="item-meta">
+                                <span class="meta-category">Design</span>
+                            </div>
+                        </div>
+                        <div class="portfolio-content">
+                            <h3>Kaws - Magazine</h3>
+                            <div class="portfolio-actions">
+                                <a href="../pdf/LAYOUT%20COMPONENTS.pdf" class="btn-view view-pdf-btn">
+                                    <i class="fas fa-eye"></i> View Project
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="cta-section">
+                <div class="cta-container">
+                    <div class="cta-content">
+                        <h2>Ready to Bring Your <span>Vision to Life?</span></h2>
+                        <p>Let's collaborate on creating something extraordinary that captures attention and drives engagement.</p>
+                        <a href="contact.html" class="cta-button">
+                            <span style="color: white;">Start a Project</span>
+                            <i class="fas fa-rocket"></i>
+                        </a>
+                    </div>
+                    <div class="cta-decoration">
+                        <div class="cta-shape shape1"></div>
+                        <div class="cta-shape shape2"></div>
+                        <div class="cta-shape shape3"></div>
+                    </div>
+                    <div class="cta-particles">
+                        <div class="cta-particle"></div>
+                        <div class="cta-particle"></div>
+                        <div class="cta-particle"></div>
+                        <div class="cta-particle"></div>
+                        <div class="cta-particle"></div>
+                    </div>
+                    <div class="cta-geometry geo1"></div>
+                    <div class="cta-geometry geo2"></div>
+                    <div class="cta-geometry geo3"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+    <footer class="creative-footer">
+        <div class="footer-glowing-line"></div>
+        <div class="footer-particles" id="footer-particles"></div>
+        
+        <div class="footer-content-wrapper">
+            <div class="footer-bottom-section">
+                <div class="social-links">
+                    <a href="https://www.xiaohongshu.com/user/profile/65d438b0000000000401cec4" class="social-circle" data-tooltip="Xiaohongshu">
+                        <i class="fas fa-bookmark"></i>
+                    </a>
+                    <a href="https://www.instagram.com/gossip_duck_/" class="social-circle" data-tooltip="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.behance.net/mongjonah" class="social-circle" data-tooltip="Behance">
+                        <i class="fab fa-behance"></i>
+                    </a>
+                </div>
+                
+                <div class="copyright-text">
+                    <p>&copy; 2025 <span class="gradient-text">Gossip Duck</span> Portfolio</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <div id="pdf-modal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <button class="close-pdf-modal">×</button>
+            <iframe id="pdf-iframe" class="pdf-iframe" title="PDF Viewer" src="about:blank" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script src="../java/script.js"></script>
+    <script src="../java/scrollFloat.js"></script>
+    <script src="../java/gradualBlur.js"></script>
+    <script src="../java/bubbleMenu.js"></script>
+</body>
+</html>

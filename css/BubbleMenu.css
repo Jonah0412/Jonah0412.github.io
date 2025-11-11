@@ -1,14 +1,17 @@
-/* Bubble menu original (restored) */
 .bubble-menu {
   position: fixed;
   top: 1.5rem;
   left: 1.5rem;
-  right: 1.5rem;
+  /* keep a compact, consistent width so the menu doesn't stretch across the page */
+  right: auto;
   z-index: 10000;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 0.75rem;
+  width: auto;
+  max-width: 360px;
+  padding-right: 0.5rem;
 }
 
 /* Ensure mobile styles are applied with higher specificity - placed early for priority */
@@ -16,7 +19,9 @@
   .bubble-menu {
     top: 1rem !important;
     left: 1rem !important;
-    right: 1rem !important;
+    /* keep compact on mobile as well */
+    right: auto !important;
+    max-width: 320px !important;
   }
   
   .bubble-menu .bubble {
@@ -252,7 +257,8 @@
   .bubble-menu {
     top: 1rem !important;
     left: 1rem !important;
-    right: 1rem !important;
+    right: auto !important;
+    max-width: 320px !important;
   }
   
   .bubble {
@@ -308,7 +314,8 @@
   .bubble-menu {
     top: 0.75rem !important;
     left: 0.75rem !important;
-    right: 0.75rem !important;
+    right: auto !important;
+    max-width: 300px !important;
   }
   
   .bubble {
@@ -355,30 +362,21 @@
   display: none !important;
 }
 
-/* Permanently hide legacy site header/nav so the bubble menu is used instead */
-header.site-header,
-header .site-nav,
-header nav,
-.main-header,
-.top-nav,
-.site-navigation,
-.header-container,
-nav.header-nav,
-.header {
+/* Don't hide the entire header — only hide the original nav when bubble menu is active */
+/* header { display: none !important; } */
+
+/* Ensure bubble menu overlay doesn't block content when closed */
+.bubble-menu-items:not([style*="display: flex"]) {
   display: none !important;
-  visibility: hidden !important;
-  height: 0 !important;
-  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
-/* If header contains page spacing, collapse it to avoid layout gaps */
-body > header,
-body > .header,
-body > .site-header {
-  margin: 0 !important;
-  padding: 0 !important;
+/* Only show overlay when menu is actually open - no dark background */
+.bubble-menu-items[aria-hidden="false"] {
+  display: flex;
 }
 
-
-  
+.bubble-menu-items[aria-hidden="true"] {
+  display: none !important;
+}
 

@@ -355,6 +355,30 @@
   display: none !important;
 }
 
+/* Permanently hide legacy site header/nav so the bubble menu is used instead */
+header.site-header,
+header .site-nav,
+header nav,
+.main-header,
+.top-nav,
+.site-navigation,
+.header-container,
+nav.header-nav,
+.header {
+  display: none !important;
+  visibility: hidden !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* If header contains page spacing, collapse it to avoid layout gaps */
+body > header,
+body > .header,
+body > .site-header {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 
   
 
